@@ -24,6 +24,7 @@ module.exports = () => {
       filename: '[name].bundle.js',
       path: path.resolve(__dirname, 'dist'),
     },
+/////////////////plugins/////////////////////////////////////////// ///////    
     plugins: [
       new HtmlWebpackPlugin({
         template: 'src/index.html',
@@ -56,7 +57,9 @@ module.exports = () => {
         swDest: 'sw.js',
       }),
     ],
+//////////////end plugins////////////////////////////////////////////////////////
 
+//////////////module rules////////////////////////////////////////////////////////
     module: {
       rules: [
         {
@@ -76,5 +79,6 @@ module.exports = () => {
         
       ],
     },
+//////////////end module rules////////////////////////////////////////////////////////    
   };
 };
