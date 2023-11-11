@@ -9,13 +9,16 @@ const { InjectManifest } = require('workbox-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 
-
+////////////// module exports ////////////////////////////////////////////////////////////
 module.exports = () => {
-  return {
-    mode: 'development',
+  return { 
+    mode: 'development', 
     entry: {
       main: './src/js/index.js',
-      install: './src/js/install.js'
+      install: './src/js/install.js',
+      database: './src/js/database.js',
+      editor: './src/js/editor.js',
+      header: './src/js/header.js',
     },
     output: {
       filename: '[name].bundle.js',
@@ -56,7 +59,7 @@ module.exports = () => {
     ],
 //////////////end plugins////////////////////////////////////////////////////////
 
-//////////////module rules////////////////////////////////////////////////////////
+//////////////module rules mini css extract plugins////////////////////////////////////////////////////////
     module: {
       rules: [
         {
