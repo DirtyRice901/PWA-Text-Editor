@@ -17,6 +17,7 @@
   "dependencies": {
     "express": "^4.17.1",
     "gitignore": "^0.7.0",
+    "idb": "^7.1.1",
     "if-env": "^1.0.4"
   },
   "devDependencies": {
