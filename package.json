@@ -26,6 +26,7 @@
     "concurrently": "^5.2.0",
     "css-loader": "^6.8.1",
     "mini-css-extract-plugin": "^2.7.6",
-    "nodemon": "^2.0.4"
+    "nodemon": "^2.0.4",
+    "webpack-pwa-manifest": "^4.3.0"
   }
 }
