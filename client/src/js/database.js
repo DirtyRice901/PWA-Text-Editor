@@ -27,7 +27,7 @@ export const putDb = async (content) => {
   ////////////// Create a request to add the content to the database ////////////////////////////
   const request = store.put({ id:1, value: content });
 
-  ///////////// Wait for the request to complete ////////////////////////////////////////////////
+  ///
   const result = await request;
   console.log(result);
 };
