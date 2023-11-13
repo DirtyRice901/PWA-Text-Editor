@@ -5,11 +5,11 @@ const path = require('path');
 const { InjectManifest } = require('workbox-webpack-plugin');
 
 
-// DONE: Add CSS loaders and babel to webpack.
+///////////// DONE: Add CSS loaders and babel to webpack /////////////////////////////////////////////
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 
-////////////// module exports ////////////////////////////////////////////////////////////
+////////////// module exports ////////////////////////////////////////////////////////////////////////
 module.exports = () => {
   return { 
     mode: 'development', 
@@ -24,9 +24,9 @@ module.exports = () => {
       filename: '[name].bundle.js',
       path: path.resolve(__dirname, 'dist')
     },
-/////////////////plugins/////////////////////////////////////////// ///////    
+/////////////////Generates default index.html//////////////////////////////////////////////////////////    
     plugins: [
-      new HtmlWebpackPlugin({ // Generates default index.html
+      new HtmlWebpackPlugin({ 
         template: './index.html',
         title: 'JATE'
       }),
@@ -34,7 +34,12 @@ module.exports = () => {
         swSrc: './src-sw.js',
         swDest: 'src-sw.js',
       }),
-      new WebpackPwaManifest({ // Generates manifest.json
+      new MiniCssExtractPlugin({
+        filename: '[name].css',
+        chunkFilename: '[id].css',
+      }), // Generates main.css
+////////////// Generates manifest.json ///////////////////////////////////////////////////////////////        
+      new WebpackPwaManifest({ 
         fingerprints: false,
         inject: true,
         name: 'Just Another Text Editor',
@@ -45,26 +50,28 @@ module.exports = () => {
         start_url: '/',
         publicPath: '/',
         icons: [
-          //////////////////////// icons ////////////////////////////////
+///////////////// Generates icons /////////////////////////////////////////////////////////////////////          
           {
-            src: path.resolve('src/images/logo.png'),
-            sizes: [96, 128, 192, 256, 384, 512],
-            destination: path.join('assets', 'icons'),
+            src: path.resolve('src/images/logo.png'), //
+            sizes: [96, 128, 192, 256, 384, 512], 
+            destination: path.join('assets', 'icons'), 
           },
         ],
       }),
     ],
-//////////////end plugins////////////////////////////////////////////////////////
+////////////// End icons generator/////////////////////////////////////////////////////////////////////
 
-//////////////module rules mini css extract plugins////////////////////////////////////////////////////////
-    module: {
+////////////// module rules///////////////////////////////////////////////////////////////////////////
+    module: { 
       rules: [
+////////////// css loader ////////////////////////////////////////////////////////////////////////////        
         {
-          test: /\.css$/i,
-          use: [MiniCssExtractPlugin.loader, 'css-loader'],
+          test: /\.css$/i, 
+          use: [MiniCssExtractPlugin.loader, 'css-loader'], 
         },
+////////////// babel loader //////////////////////////////////////////////////////////////////////////        
         {
-          test: /\.m?js$/,
+          test: /\.m?js$/, // Matches all .js files
           exclude: /(node_modules|bower_components)/,
           use: {
             loader: 'babel-loader',
@@ -77,6 +84,7 @@ module.exports = () => {
         
       ],
     },
-//////////////end module rules////////////////////////////////////////////////////////    
+//////////////end module rules////////////////////////////////////////////////////////////////////////    
   };
 };
+////////////// end module exports /////////////////////////////////////////////////////////////////////
