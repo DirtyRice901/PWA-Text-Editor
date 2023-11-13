@@ -47,20 +47,11 @@ module.exports = () => {
         icons: [
           //////////////////////// icons ////////////////////////////////
           {
-            src: path.resolve('src/assets/icon.png'),
+            src: path.resolve('src/images/logo.png'),
             sizes: [96, 128, 192, 256, 384, 512],
             destination: path.join('assets', 'icons'),
           },
-          {
-            src: path.resolve('src/assets/large-icon.png'),
-            size: '1024x1024' // you can also use the specifications pattern
-          },
-          {
-            src: path.resolve('src/assets/maskable-icon.png'),
-            size: '1024x1024',
-            purpose: 'maskable'
-          }
-        ]
+        ],
       }),
     ],
 //////////////end plugins////////////////////////////////////////////////////////
