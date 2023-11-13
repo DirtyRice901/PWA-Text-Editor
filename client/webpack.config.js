@@ -26,11 +26,15 @@ module.exports = () => {
     },
 /////////////////plugins/////////////////////////////////////////// ///////    
     plugins: [
-      new HtmlWebpackPlugin({
+      new HtmlWebpackPlugin({ // Generates default index.html
         template: './index.html',
         title: 'JATE'
       }),
-      new WebpackPwaManifest({
+      new InjectManifest({ // Generates service-worker.js
+        swSrc: './src-sw.js',
+        swDest: 'src-sw.js',
+      }),
+      new WebpackPwaManifest({ // Generates manifest.json
         fingerprints: false,
         inject: true,
         name: 'Just Another Text Editor',
@@ -57,10 +61,6 @@ module.exports = () => {
             purpose: 'maskable'
           }
         ]
-      }),
-      new InjectManifest({
-        swSrc: './src-sw.js',
-        swDest: 'src-sw.js',
       }),
     ],
 //////////////end plugins////////////////////////////////////////////////////////
