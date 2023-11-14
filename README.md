@@ -54,7 +54,7 @@ Lighthouse Analysis
 Visit the app on Heroku
 [URL Link](https://pwa-text-editor901-332321d741be.herokuapp.com/)
 
-[Demonstration Video](https://drive.google.com/file/d/1CJW7ZeDCefmGsU6Jr-XKPUq3rY5HMOyC/view)
+
 ## License
 ![MIT](https://img.shields.io/badge/license-MIT-yellow)
 
