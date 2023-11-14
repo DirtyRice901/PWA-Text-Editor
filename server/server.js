@@ -2,11 +2,15 @@ const express = require('express');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
-
+//////////////serve static files from client/dist folder///////////////////////////////////////////////////////////////////////////////////
 app.use(express.static('./client/dist'));
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
+//////////////set up middleware to parse incoming requests/////////////////////////////////////////////////////////////////////////////////
+app.use(express.urlencoded({ extended: true })); // parse incoming requests with urlencoded payloads
 
-require('./routes/htmlRoutes')(app);
+//////////////set up middleware to parse incoming JSON data/////////////////////////////////////////////////////////////////////////////////
+app.use(express.json()); // parse incoming requests with JSON payloads
+
+//////////////set up routes for API and HTML///////////////////////////////////////////////////////////////////////////////////////////////
+require('./routes/htmlRoutes')(app); 
 
 app.listen(PORT, () => console.log(`Now listening on port: ${PORT}`));
