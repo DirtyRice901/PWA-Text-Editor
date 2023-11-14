@@ -16,11 +16,14 @@ This challenge is to build a text editor that runs in the browser. The app will 
 
 ## Installation
 ### The following dependencies required to run the application:
+
+ __Rememember to ```npm init``` before installing these packages__
+
 * [express.js](https://www.npmjs.com/package/express)
 
-* [Inquirer.js](https://www.npmjs.com/package/inquirer/v/8.2.4)
+* [Webpack-cli](https://www.npmjs.com/package/webpack-cli)
 
-* [UUID.v4](https://www.npmjs.com/package/uuid)
+* [ibd](https://www.npmjs.com/package/idb)
 
 * [NodeJS](https://nodejs.org/en/download)
 
@@ -30,11 +33,15 @@ This challenge is to build a text editor that runs in the browser. The app will 
 
 ## Functionalities
 ### A user can do the following things with this Note Taking App:
-* Display Notes
+* CRUD Operations: Users should be to create new document, read existing ones,      update their conten and delete they're no longer needed.
 
-* Add New Notes
+* Offline Support: As a PWA, the text editor should be able to function offline. Changes made while offline should be saved and then synchronized when the user goes online again.
 
-* Update Notes
+* Sync Across Devices: Changes made on one device should be reflected on all other devices where the user has the app installed.
+
+* Rich Text Editing: The text editor might support bold, italics, underline, hyperlinks, and other rich text features.
+
+* Auto Save: Changes to documents should be saved automatically, so users don't lose their work.
 
 
 
